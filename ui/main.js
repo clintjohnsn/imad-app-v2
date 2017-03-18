@@ -3,6 +3,7 @@
 var btn= document.getElementById('btn');
 
 btn.onclick=function () {
+
 	//create a request
 	var request = new XMLHttpRequest();
 
@@ -29,10 +30,10 @@ btn.onclick=function () {
 	}
 
 	//actually send the request
-	request.open('GET','/counter',true);
+	request.open('GET','clintjohnsn.imad.hasura-app.io/counter',true);
 	request.send(null);
 
 
 
-}
+};
 
