@@ -27,7 +27,7 @@ btn.onclick=function () {
 		}
 
 
-	}
+	};
 
 	//actually send the request
 	request.open('GET','clintjohnsn.imad.hasura-app.io/counter',true);
