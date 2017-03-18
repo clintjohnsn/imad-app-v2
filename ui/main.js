@@ -1,13 +1,38 @@
-madi=document.getElementById('madi');
+//counter 
 
-moveAmount=0;
-move =function(){
+var btn= document.getElementById('btn');
 
-	moveAmount+=5;
-	madi.style.paddingLeft=moveAmount+'px';
-};
-madi.onclick=function(){
-	interval = setInterval(move,50);
-};
+btn.onclick=function () {
+	//create a request
+	var request = new XMLHttpRequest();
 
-console.log("daf");
+	
+	//process the request
+	request.onreadystatechange=function () {
+
+			//check if request is complete
+		if(request.readyState===XMLHttpRequest.DONE){
+			
+			//check if response code is 200 (successful AJAX call)
+			if (request.status===200){
+
+				var counter=request.responseText;
+				var span=document.getElementById('count');
+				span.innerHTML=counter.toString();
+
+
+			}
+
+		}
+
+
+	}
+
+	//actually send the request
+	request.open('GET','/counter',true);
+	request.send(null);
+
+
+
+}
+
