@@ -34,5 +34,5 @@ btn.onclick=function () {
 
 
 
-}
+};
 
